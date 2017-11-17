@@ -4,6 +4,8 @@
     "homebridge-netatmo": "*",
     "homebridge-eveatmo": "*",
     "homebridge-hs100": "*",
-    "homebridge-broadlink-rm": "*"
+    "homebridge-broadlink-rm": "*",
+    "homebridge-dyson360eye":"*",
+    "homebridge-mqtt":"*"
   }
 }

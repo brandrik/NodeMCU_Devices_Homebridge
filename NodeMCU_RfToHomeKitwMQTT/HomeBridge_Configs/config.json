@@ -5,7 +5,20 @@
       "pin":"012-98-432",
       "port":51826
    },
+   "accessories":[
+     
+
+   ],
    "platforms":[
+       {
+       "platform": "mqtt",
+       "name": "mqtt",
+       "url": "mqtt://127.0.0.1",
+       "topic_type": "multiple",
+       "topic_prefix": "homebridge",
+       "username": "admin",
+       "password": "125912"
+      },
       {
          "platform":"HarmonyHub",
          "name":"remote"
