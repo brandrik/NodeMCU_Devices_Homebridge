@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "homebridge-harmonyhub": "*",
+    "homebridge-netatmo": "*",
+    "homebridge-eveatmo": "*",
+    "homebridge-hs100": "*",
+    "homebridge-broadlink-rm": "*"
+  }
+}
