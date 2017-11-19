@@ -6,8 +6,24 @@
       "port":51826
    },
    "accessories":[
-     
-
+       {
+         "accessory": "Dyson360EyeRobotVacuum",
+         "name": "Minna",
+         "host": "192.168.1.48",
+         "port": 1883,
+         "username": "JJ5-UK-HEA1285A",
+         "password": "o6IJWuk9C+HcX1w2zVi3TJC3NDD2Bx6atpEBLFCo087wzQGJEwPHJOwqcKj5fDv0rYA0sr4ZRgszo84ZBK5v7g==",
+         "refresh": 0
+       },
+       {
+         "accessory": "Dyson360EyeRobotVacuum",
+         "name": "Molli",
+         "host": "192.168.1.76",
+         "port": 1883,
+         "username": "JG8-EU-HKA2172A",
+         "password": "kkszw87D+XQHg3nLvS4PiWnlLdGYHd3wRfXOkO6r0ksT3sQ6/cMhvO3CachwZDPk+rFs+qTmSZBxpmLoaJiZPQ==",
+         "refresh": 0
+       }
    ],
    "platforms":[
        {

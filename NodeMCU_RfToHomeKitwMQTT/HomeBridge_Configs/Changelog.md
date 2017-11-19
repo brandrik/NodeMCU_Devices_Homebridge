@@ -16,7 +16,7 @@ for homebridge running in a docker container on rapsberry pi 1
   "host": "192.168.1.48",
   "port": 1883,
   "username": "JJ5-UK-HEA1285A",
-  "password": "",
+  "password": "o6IJWuk9C+HcX1w2zVi3TJC3NDD2Bx6atpEBLFCo087wzQGJEwPHJOwqcKj5fDv0rYA0sr4ZRgszo84ZBK5v7g==",
   "refresh": 0
 },
 
@@ -31,8 +31,6 @@ kkszw87D+XQHg3nLvS4PiWnlLdGYHd3wRfXOkO6r0ksT3sQ6/cMhvO3CachwZDPk+rFs+qTmSZBxpmLo
 
 
 
-
-
 {
   "accessory": "Dyson360EyeRobotVacuum",
   "name": "Molli",
@@ -42,3 +40,6 @@ kkszw87D+XQHg3nLvS4PiWnlLdGYHd3wRfXOkO6r0ksT3sQ6/cMhvO3CachwZDPk+rFs+qTmSZBxpmLo
   "password": "kkszw87D+XQHg3nLvS4PiWnlLdGYHd3wRfXOkO6r0ksT3sQ6/cMhvO3CachwZDPk+rFs+qTmSZBxpmLoaJiZPQ==",
   "refresh": 0
 }
+
+20171117:
+Currently cannot connect to Molli ( no wifi, Molli does not connect to Dyson app either)
