@@ -36,6 +36,17 @@
        "password": "125912"
       },
       {
+        "platform": "netatmo",
+        "name": "netatmo platform",
+        "ttl": 5,
+        "auth": {
+	        "client_id": "5a12911c8e17820ffc8be85f",
+            "client_secret": "cHru7AyqxeM0vktcSOFHe40xSJl4ggdo8SMYq",
+            "username": "riko.brandes@gmail.com",
+            "password": "evo-2013"
+        }
+      },
+      {
          "platform":"HarmonyHub",
          "name":"remote"
       },
