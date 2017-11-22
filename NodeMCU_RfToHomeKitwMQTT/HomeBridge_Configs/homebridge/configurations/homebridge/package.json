@@ -6,6 +6,7 @@
     "homebridge-hs100": "*",
     "homebridge-broadlink-rm": "*",
     "homebridge-dyson360eye":"*",
-    "homebridge-mqtt":"*"
+    "homebridge-mqtt":"*",
+    "homebridge-openweathermap-temperature":"*"
   }
 }

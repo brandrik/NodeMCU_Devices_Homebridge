@@ -174,7 +174,7 @@ Error:
 
 
     ---
-    
+
 
 When you use --net=host you do not need to use EXPOSE nor do you need to use -p to expose the ports from the container. This option makes the container use the host's network stack rather than a docker container network stack so all servers that bind to a port take that port from the host and appear on the network that way.
 

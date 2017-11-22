@@ -23,6 +23,16 @@
          "username": "JG8-EU-HKA2172A",
          "password": "kkszw87D+XQHg3nLvS4PiWnlLdGYHd3wRfXOkO6r0ksT3sQ6/cMhvO3CachwZDPk+rFs+qTmSZBxpmLoaJiZPQ==",
          "refresh": 0
+       },
+       {
+        "accessory": "OpenweathermapTemperature",
+        "name": "Temperature Sinthern",
+        "url": "http://api.openweathermap.org/data/2.5/weather?q=Pulheim,DE&APPID=dd156b7650050fd3e81c3591832b3d34"
+       },
+       {
+        "accessory": "OpenweathermapTemperature",
+        "name": "Temperature Hemmerde",
+        "url": "http://api.openweathermap.org/data/2.5/weather?q=Westhemmerde,DE&APPID=344dc43407d5cf64e6e83476457ea0c5"
        }
    ],
    "platforms":[
