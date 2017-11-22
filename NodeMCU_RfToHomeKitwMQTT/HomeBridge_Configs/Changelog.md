@@ -148,7 +148,33 @@ Note: by default Docker containers can make connections to the outside world, bu
     target     prot opt source               destination
     DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80 to:172.17.0.2:80
 ```
+Error:
 
+    Cannot create container for service openhab: conflicting options: host type networking can't be used with links. This would result in undefined behavior
+
+    With this docker-compose.yml, the error will happen when the backend container is already running and we attempt to execute another docker run command related to backend.
+
+    Here's a concrete example. Assuming that backend is already running, this is the behavior:
+
+    # When running `frontend` container, there's no problem
+    docker-compose run frontend cp -rf /code/static_files/ /code/frontend_assets/
+    # But once you run the `backend` container while there's already one running...
+    docker-compose run backend python manage.py collectstatic --noinput
+    You will immediately see this error:
+
+    ERROR: Cannot create container for service backend: Conflicting options: host type networking can't be used with links. This would result in undefined behavior
+    Workaround
+
+    There's a workaround for this issue that works for me, which is to do a docker-compose down prior to doing docker-compose run backend. Eg, this is what I do now:
+
+    docker-compose down
+    docker-compose run frontend cp -rf /code/static_files/ /code/frontend_assets/
+    # No problem. We are happy! ^_^
+    docker-compose run backend python manage.py collectstatic --noinput
+
+
+    ---
+    
 
 When you use --net=host you do not need to use EXPOSE nor do you need to use -p to expose the ports from the container. This option makes the container use the host's network stack rather than a docker container network stack so all servers that bind to a port take that port from the host and appear on the network that way.
 
@@ -193,3 +219,24 @@ chown: invalid user: ‘openhab:openhab’
 ```
 
 That behaviour is correct. You are starting the container with --user=999 (as non root). The entryscript can not add the user openhab, because you are starting as non-root and it fails with invalid user. Removing the --user should do the job.
+
+
+### Alternative setup:
+
+Following up to help anyone else looking for the Compose formatting. I finally had a kind soul point out what I was missing in the formatting on Reddit, and was able to successfully get this network config into my Compose file. Formatting below as a sample - this will allow setting up a macvlan based network in your docker host, along with the ability to specify a manual IP address for the system - this will let you have less problems with your UPnP based integrations and potential port conflicts on said services.
+
+networks:
+  mynet:
+    driver: macvlan
+    driver_opts:
+      parent: "ens160"
+    ipam:
+      config:
+      - subnet: 10.0.10.0/24
+        gateway: 10.0.10.1
+        ip_range: 10.0.10.224/28
+You can then use the following in the individual Compose service section:
+
+      networks:
+        mynet:
+          ipv4_address: 10.0.10.200
